@@ -19,7 +19,7 @@ def predicting(bedrooms, bathrooms, sqft_living,  floors, grade, yr_built):
     prediction = random_forest_regression_model.predict([[bedrooms, bathrooms, sqft_living,  floors, grade, yr_built]])
     output = round(prediction[0], 2)
     return output
-#'bedrooms', 'bathrooms',	'sqft_living',	'grade', 'floors',	'yr_built'
+#'bedrooms', 'bathrooms',	'sqft_living', 'floors', 'grade',	'yr_built'
 def main():
     html_temp = """
     <div style="background-color:navy;padding:10px">
@@ -48,52 +48,10 @@ def main():
 
     st.subheader("Tahun Dibangun") #yr_built
     yr_built = st.text_input("", "")
-
-    
-    #st.subheader("Jenis bahan bakar")
-    
-    #fual = ("Petrol", "Diesel", "CNG")
-    #fual_type = st.radio("", fual)
-    #if fual_type == "Petrol":
-    #    Fuel_Type_Petrol = 1
-    #    Fuel_Type_Diesel = 0
-    #elif fual_type == "Diesel":
-    #    Fuel_Type_Petrol = 0
-    #    Fuel_Type_Diesel = 1
-    #else:
-    #    Fuel_Type_Petrol = 0
-    #    Fuel_Type_Diesel = 0
-
-    #seller = ("Dealer", "Perorangan")
-
-    #st.subheader("Apakah Anda Dealer atau Perorangan?")
-
-    #Seller_Type_Individual = st.radio("", seller)
-    #if Seller_Type_Individual == "Perorangan":
-    #    Seller_Type_Individual = 1
-    #else:
-    #    Seller_Type_Individual = 0
-
-    #display = ("Automatic", "Manual")
-
-    #st.subheader("Tipe Transmisi")
-
-    #Transmission_Mannual = st.radio("", display)
-    #if Transmission_Mannual == "Manual":
-    #    Transmission_Mannual = 1
-    #else:
-    #    Transmission_Mannual = 0
     
 
     result = ""
     if st.button("Perkiraan harga"):
-
-        #if Present_Price == "Type Here":
-         #   st.error("this is an error")
-         #   st.text("Enter Showroom Price")
-
-        #if Kms_Driven == "Enter Here":
-         #   st.text("Enter how many Kms drived")
 
         my_bar = st.progress(0)
         for percent_complete in range(100):
