@@ -29,63 +29,60 @@ def main():
 
     st.markdown(html_temp, unsafe_allow_html=True)
     
-    st.subheader("Number of bedrooms")
+    st.subheader("Jumlah Kamar") #bedrooms
     bedrooms = st.slider("", min_value=0, max_value=11, value=0, step=1)
 
-    st.subheader("Number of bathrooms")
+    st.subheader("Jumlah Kamar Mandi") #bathrooms
     bathrooms = st.slider("", min_value=0, max_value=8, value=0, step=1)
 
-    st.subheader("Square feet living")
-    sqft_living = st.text_input("type in square feet", "")
+    st.subheader("Luas") #sqft_living
+    sqft_living = st.text_input("dalam square feet (sqft)", "")
 
 
-    st.subheader("number of floors")
+    st.subheader("Jumlah Lantai") #floors
     floors = st.slider("", min_value=1, max_value=3, value=1, step=1)
 
-    st.subheader("grade")
+    st.subheader("Kelas / Grade") #grade
     grade = st.slider("", min_value=1, max_value=13, value=1, step=1)
 
 
+    st.subheader("Tahun Dibangun") #yr_built
+    yr_built = st.text_input("", "")
 
     
-
-    st.subheader("year built")
-    yr_built = st.text_input("number of year built", "")
-
+    #st.subheader("Jenis bahan bakar")
     
-    st.subheader("Jenis bahan bakar")
-    
-    fual = ("Petrol", "Diesel", "CNG")
-    fual_type = st.radio("", fual)
-    if fual_type == "Petrol":
-        Fuel_Type_Petrol = 1
-        Fuel_Type_Diesel = 0
-    elif fual_type == "Diesel":
-        Fuel_Type_Petrol = 0
-        Fuel_Type_Diesel = 1
-    else:
-        Fuel_Type_Petrol = 0
-        Fuel_Type_Diesel = 0
+    #fual = ("Petrol", "Diesel", "CNG")
+    #fual_type = st.radio("", fual)
+    #if fual_type == "Petrol":
+    #    Fuel_Type_Petrol = 1
+    #    Fuel_Type_Diesel = 0
+    #elif fual_type == "Diesel":
+    #    Fuel_Type_Petrol = 0
+    #    Fuel_Type_Diesel = 1
+    #else:
+    #    Fuel_Type_Petrol = 0
+    #    Fuel_Type_Diesel = 0
 
-    seller = ("Dealer", "Perorangan")
+    #seller = ("Dealer", "Perorangan")
 
-    st.subheader("Apakah Anda Dealer atau Perorangan?")
+    #st.subheader("Apakah Anda Dealer atau Perorangan?")
 
-    Seller_Type_Individual = st.radio("", seller)
-    if Seller_Type_Individual == "Perorangan":
-        Seller_Type_Individual = 1
-    else:
-        Seller_Type_Individual = 0
+    #Seller_Type_Individual = st.radio("", seller)
+    #if Seller_Type_Individual == "Perorangan":
+    #    Seller_Type_Individual = 1
+    #else:
+    #    Seller_Type_Individual = 0
 
-    display = ("Automatic", "Manual")
+    #display = ("Automatic", "Manual")
 
-    st.subheader("Tipe Transmisi")
+    #st.subheader("Tipe Transmisi")
 
-    Transmission_Mannual = st.radio("", display)
-    if Transmission_Mannual == "Manual":
-        Transmission_Mannual = 1
-    else:
-        Transmission_Mannual = 0
+    #Transmission_Mannual = st.radio("", display)
+    #if Transmission_Mannual == "Manual":
+    #    Transmission_Mannual = 1
+    #else:
+    #    Transmission_Mannual = 0
     
 
     result = ""
@@ -114,7 +111,7 @@ if nav == "Home":
 
 if nav == "Data Sample":
     st.title("Data Sample")
-    data = pd.read_csv("kc_house_data.csv", usecols=['bedrooms', 'bathrooms',	'sqft_living',	'grade', 'floors',	'yr_built'])
+    data = pd.read_csv("dataFrame_test_train.csv", usecols=['price', 'bedrooms', 'bathrooms', 'sqft_living',	'grade', 'floors',	'yr_built'])
     st.table(data.sample(100))
     plt.show()
 
